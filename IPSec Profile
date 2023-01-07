@@ -1,1 +1,9 @@
-
+!HQ
+!
+crypto ipsec profile default
+set ikev2-profile PROFILE
+!
+!Branches
+!
+crypto ipsec profile default
+set ikev2-profile PROFILE
