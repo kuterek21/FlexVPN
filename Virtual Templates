@@ -1,0 +1,50 @@
+!HQ
+!
+int lo0
+ip add 172.16.255.1/24
+exit
+!
+int virtual-templete 1 type tunnel
+ip innumbered lo0
+ip mtu 1400
+ip tcp adjust-mss 1360
+tunnel path-mtu-discovery
+ip nhrp network-id 1
+ip nrhp redirect
+tunnel prot ipsec profile default
+!
+!Branches!SPOKES1
+!
+int tu 0
+ip add 172.16.255.2/32
+ip mtu 1400
+ip tcp adjust-mss 1360
+tunnel source g0/0
+tunnel det 192.0.2.4
+ip nhrp network-id 1
+ip nhrp shortcut virtual-template 1
+ip nhrp redirect
+tunn protection ipsec profile default
+tunnel path-mtu-disco
+ip ospf 1 erea 0
+ip ospf prio 0
+exit
+!
+!Branches!SPOKES2
+!
+int tu 0
+ip add 172.16.255.3/32
+ip mtu 1400
+ip tcp adjust-mss 1360
+tunnel source g0/0
+tunnel det 192.0.2.4
+ip nhrp network-id 1
+ip nhrp shortcut virtual-template 1
+ip nhrp redirect
+tunn protection ipsec profile default
+tunnel path-mtu-disco
+ip ospf 1 erea 0
+ip ospf prio 0
+exit
+!
+
