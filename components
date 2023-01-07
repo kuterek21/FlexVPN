@@ -1,0 +1,12 @@
+Point a point or full mesh, FLexVPNs provide support to other vendors and use IKEv2
+
+IKEv2 Keyrigs
+  credentials and passwords
+IKEv2 Profiles
+  identifiy vpn peers
+IPSec profile
+  tell the router which IKEv2 profile and security parameters to use
+Tunnel Interface
+  used by spokes as IPSec tunnel source
+Virtual Template
+  used by servers to build virt access interfaces 0
