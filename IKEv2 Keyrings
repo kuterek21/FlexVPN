@@ -1,0 +1,30 @@
+ crypto ikev2 keyring NAME_FOR_THE_KEYRING
+ peer PEERS_NAMES
+ address 0.0.0.0 0.0.0.0
+ pre-shared-key local PASSWORD1
+ pre-shared-key remote PASSWORD2
+ !
+ peer BRANCH01
+ identity address 1.2.3.4
+ pre-shared-key PASSWORD2
+ !
+ peer BRANCH02
+ identity address 1.2.3.5
+ pre-shared-key PASSWORD2
+ !
+ 
+- BRANCH01
+!
+crypto ikev2 keyring NAME
+peer ALL-PEERS
+address 0.0.0.0 0.0.0.0
+pre-shared-key local PASSWORD2
+pre-shared-key remote PASSWORD1
+
+- BRANCH02
+!
+crypto ikev2 keyring NAME
+peer ALL-PEERS
+address 0.0.0.0 0.0.0.0
+pre-shared-key local PASSWORD2
+pre-shared-key remote PASSWORD1
