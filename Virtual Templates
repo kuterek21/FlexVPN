@@ -30,6 +30,17 @@ ip ospf 1 erea 0
 ip ospf prio 0
 exit
 !
+int vritual-tem 1 ty tun
+ip unnumbered tunnel 0
+ip mtu 1400
+ip tcp adjust-mss 1360
+ip nhrp network-id 1
+ip nhrp shortcut virtual-temp 1
+ip nhrp redirect
+tunnel prot ipsec prof def
+tunnel path-mtu-discovery
+!
+!
 !Branches!SPOKES2
 !
 int tu 0
@@ -46,5 +57,15 @@ tunnel path-mtu-disco
 ip ospf 1 erea 0
 ip ospf prio 0
 exit
+!
+int vritual-tem 1 ty tun
+ip unnumbered tunnel 0
+ip mtu 1400
+ip tcp adjust-mss 1360
+ip nhrp network-id 1
+ip nhrp shortcut virtual-temp 1
+ip nhrp redirect
+tunnel prot ipsec prof def
+tunnel path-mtu-discovery
 !
 
