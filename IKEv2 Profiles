@@ -1,0 +1,28 @@
+HQ
+crypto ikve2 profile PROFILE
+match identity remote address 0.0.0.0
+match identity remote email domain op.pl
+authentication local pre-share
+authentication remote pre-share
+keyring local KEYRING
+virtual-template 1
+
+BRANCH1
+!
+crypto ikve2 profile PROFILE
+match identity remote address 0.0.0.0
+identity local email branch2@op.pl !!
+authentication local pre-share
+authentication remote pre-share
+keyring local KEYRING
+virtual-template 1
+
+BRANCH2
+!
+crypto ikve2 profile PROFILE
+match identity remote address 0.0.0.0
+identity local email branch2@op.pl !!
+authentication local pre-share
+authentication remote pre-share
+keyring local KEYRING
+virtual-template 1
